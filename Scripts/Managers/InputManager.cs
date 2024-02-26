@@ -12,7 +12,10 @@ public partial class InputManager : Node
 		if (@event.IsActionPressed("game_action"))
 		{
 			EmitSignal("DoSomething");
-	
+		}
+  		if (@event.IsActionPressed("ui_cancel"))
+		{
+			GetTree().Quit();
 		}
 	}
 }
