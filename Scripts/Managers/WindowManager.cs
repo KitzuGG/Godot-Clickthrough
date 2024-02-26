@@ -4,6 +4,11 @@ using System;
 public partial class WindowManager : Node
 {
 	// Autoloaded
+ 	// Remember to set the Project Settings correctly:
+  	// Project Settings > Advanced Settings
+   	// Display > Window > Transparent > TRUE
+    	// Display > Window > Always on Top > TRUE
+     	// Display > Window > Aspect > Expand (Recommended)
 	
 	public override void _Ready()
 	{
