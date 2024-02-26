@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dagbcyrubne6g"]
+
+[ext_resource type="Script" path="res://Scripts/Behaviors/SomeObject.cs" id="1_h6cui"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oohcs"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bwsrp"]
+material = SubResource("StandardMaterial3D_oohcs")
+
+[node name="MainScene" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.068076, -0.993923, 0.0865052, 0.7048, 0.109279, 0.700939, -0.706132, 0.0132517, 0.707956, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_bwsrp")
+script = ExtResource("1_h6cui")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 3.28451, 6.17915)

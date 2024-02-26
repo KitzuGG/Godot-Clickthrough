@@ -1,0 +1,48 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Clickthrough"
+run/main_scene="res://Scenes/main_scene.tscn"
+config/features=PackedStringArray("4.2", "C#", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+InputManager="*res://Scripts/Managers/InputManager.cs"
+WindowManager="*res://Scripts/Managers/WindowManager.cs"
+ApiManager="*res://Scripts/Clickthrough/ApiManager.cs"
+MouseDetection="*res://Scripts/Clickthrough/MouseDetection.cs"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=2
+window/size/always_on_top=true
+window/size/transparent=true
+window/stretch/aspect="expand"
+
+[dotnet]
+
+project/assembly_name="Clickthrough"
+
+[input]
+
+game_action={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+
+[rendering]
+
+viewport/transparent_background=true
