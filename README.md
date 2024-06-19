@@ -15,4 +15,4 @@ On newer graphic drivers, the window transparency may not work correctly: Clickt
 
 After some tinkering I managed to find some solutions (yet not sure on why this problem occurs in the first place)
 - Change rendering method to `Compatibility` or
-- Disable VSync, if you need a fps cap consider using `Project Settings > Application > Run > Max FPS` instead
+- Disable VSync in `Project Settings > Display > Window > V-Sync Mode: "Disabled"`, if you need a fps cap consider using `Project Settings > Application > Run > Max FPS` instead
