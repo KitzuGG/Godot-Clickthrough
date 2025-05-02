@@ -42,8 +42,8 @@ public partial class ApiManager : Node
 	{
 		if (clickthrough)
 		{
-			// We set the window as layered and click-through
-			SetWindowLong(_hWnd, GwlExStyle,   WsExLayered | WsExTransparent);
+			// We set the window as click-through
+			SetWindowLong(_hWnd, GwlExStyle, WsExLayered | WsExTransparent);
 		}
 		else
 		{

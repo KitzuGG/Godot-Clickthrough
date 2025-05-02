@@ -19,7 +19,7 @@ public partial class MouseDetection : Node
 	// also can throttle the detection every few frames is possible
 	public override void _PhysicsProcess(double delta)
 	{
-		DetectPassthrough();
+		DetectPassthrough_PixelColor();
 	}
 
 	
@@ -27,7 +27,7 @@ public partial class MouseDetection : Node
 	// This can become expensive if done every frame and in more complex scenes.
 	// We will use this to determine whether the window should be clickable or not
 	// You can choose any other method of detection!
-	private void DetectPassthrough()
+	private void DetectPassthrough_PixelColor()
 	{
 		Viewport viewport = GetViewport();
         

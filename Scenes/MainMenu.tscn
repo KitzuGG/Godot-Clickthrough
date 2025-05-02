@@ -1,0 +1,125 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqrmmb1qw1yve"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_kjwba"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_i26rj"]
+
+[sub_resource type="GDScript" id="GDScript_bnhvo"]
+resource_name = "LoadSpinning"
+script/source = "extends Button
+
+func _pressed() -> void:
+	get_tree().change_scene_to_packed(load(\"uid://dagbcyrubne6g\")) 
+"
+
+[sub_resource type="GDScript" id="GDScript_tt5f1"]
+resource_name = "LoadThrow"
+script/source = "extends Button
+
+func _pressed() -> void:
+	get_tree().change_scene_to_packed(load(\"uid://b2uanfvfybte7\"))
+"
+
+[sub_resource type="GDScript" id="GDScript_kjwba"]
+resource_name = "Quit"
+script/source = "extends Button
+
+func _pressed() -> void:
+	get_tree().quit()
+"
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SceneSelection" type="Window" parent="."]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(600, 500)
+minimize_disabled = true
+maximize_disabled = true
+min_size = Vector2i(500, 200)
+keep_title_visible = true
+theme_override_icons/close = SubResource("ImageTexture_kjwba")
+theme_override_icons/close_pressed = SubResource("ImageTexture_i26rj")
+
+[node name="Control" type="Control" parent="SceneSelection"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="SceneSelection/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -54.0
+offset_top = 107.0
+offset_right = 54.0
+offset_bottom = 130.0
+grow_horizontal = 2
+text = "Select a demo"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SceneSelection/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.5
+offset_top = -33.0
+offset_right = 63.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SpinningCube" type="Button" parent="SceneSelection/Control/VBoxContainer"]
+layout_mode = 2
+text = "Spinning Cube"
+script = SubResource("GDScript_bnhvo")
+
+[node name="ThrowBox" type="Button" parent="SceneSelection/Control/VBoxContainer"]
+layout_mode = 2
+text = "Throw Box"
+script = SubResource("GDScript_tt5f1")
+
+[node name="Quit" type="Button" parent="SceneSelection/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -63.5
+offset_top = -49.0
+offset_right = 63.5
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Quit"
+script = SubResource("GDScript_kjwba")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -526.5
+offset_top = 158.0
+offset_right = 526.5
+offset_bottom = 227.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 50
+text = "A very small demo for transparent windows"

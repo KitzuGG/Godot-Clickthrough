@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://dagbcyrubne6g"]
+
+[ext_resource type="Script" uid="uid://bt0yempn6gstf" path="res://Scripts/Behaviors/SpinningObject.cs" id="1_lvel2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oohcs"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bwsrp"]
+material = SubResource("StandardMaterial3D_oohcs")
+
+[sub_resource type="GDScript" id="GDScript_lvel2"]
+resource_name = "Quit"
+script/source = "extends Button
+
+func _pressed() -> void:
+	get_tree().quit()
+"
+
+[node name="MainScene" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.068076, -0.993923, 0.0865052, 0.7048, 0.109279, 0.700939, -0.706132, 0.0132517, 0.707956, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_bwsrp")
+script = ExtResource("1_lvel2")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 3.28451, 6.17915)
+
+[node name="Info" type="Label" parent="."]
+offset_left = 15.0
+offset_top = 14.0
+offset_right = 337.0
+offset_bottom = 42.0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 20
+text = "Press Esc to return to main menu
+(window must be active)"
+
+[node name="Quit" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -63.5
+offset_top = -112.0
+offset_right = 63.5
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Quit"
+script = SubResource("GDScript_lvel2")

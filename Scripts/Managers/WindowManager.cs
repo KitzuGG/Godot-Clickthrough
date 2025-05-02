@@ -15,7 +15,7 @@ public partial class WindowManager : Node
 		// Makes the background actually transparent
 		GetViewport().TransparentBg = true;
 		// Seems to function better when window is maximized or fullscreen, up to you
-		DisplayServer.WindowSetMode(DisplayServer.WindowMode.Maximized);
+		DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
 		// If not, the default window border will still be rendered
 		DisplayServer.WindowSetFlag(DisplayServer.WindowFlags.Borderless, true);
 		// To avoid wacky behaviours
@@ -23,13 +23,14 @@ public partial class WindowManager : Node
 		
 		// Even though window should not be resizable, if the window is moved between monitor (of different sizes)
 		// via shortcut, the window may lose transparency. This refreshes the window to become transparent again 
-		GetViewport().SizeChanged += ViewportSizeRefresh;
+		// Do not use if window mode is Fullscreen (use Maximized instead)
+		// GetViewport().SizeChanged += ViewportSizeRefresh;
 	}
 	
 	
 	
 	// Used to avoid losing transparency when the borderless window is moved between monitors
-	// of different sizes using the shortcut Super + any arrow key
+	// of different sizes using the shortcut Windows + any arrow key
 	private void ViewportSizeRefresh()
 	{
 		DisplayServer.WindowSetFlag(DisplayServer.WindowFlags.Borderless, false);

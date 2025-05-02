@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Clickthrough"
-run/main_scene="res://Scenes/main_scene.tscn"
-config/features=PackedStringArray("4.2", "C#", "Forward Plus")
+run/main_scene="uid://cqrmmb1qw1yve"
+config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -29,7 +29,10 @@ window/size/viewport_height=1080
 window/size/mode=2
 window/size/always_on_top=true
 window/size/transparent=true
+window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/per_pixel_transparency/allowed=true
+window/vsync/vsync_mode=0
 
 [dotnet]
 
@@ -42,6 +45,10 @@ game_action={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
+
+[physics]
+
+3d/default_gravity=15.0
 
 [rendering]
 

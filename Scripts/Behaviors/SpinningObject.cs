@@ -1,16 +1,7 @@
 using Godot;
-using System;
 
-public partial class SomeObject : MeshInstance3D
+public partial class SpinningObject : MeshInstance3D
 {
-	private InputManager _im;
-	
-	public override void _Ready()
-	{
-		_im = GetNode<InputManager>("/root/InputManager");
-		_im.DoSomething += DoSomething;
-	}
-
 	// Just to show the window will adapt to the objects in the scene
 	public override void _Process(double delta)
 	{
@@ -30,6 +21,15 @@ public partial class SomeObject : MeshInstance3D
 		int z = rng.RandiRange(-1,1);
 		Position = new Vector3(x * 2f, y * 2f, z * 2f);
 	}
-	
+
+	public override void _Input(InputEvent @event)
+	{
+		if (@event.IsActionPressed("game_action"))
+		{
+			DoSomething();
+		}
+
+	}
+
 	
 }
